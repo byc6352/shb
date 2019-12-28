@@ -1,0 +1,442 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bj" >
+
+     <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <!-- +++++++++++++++++++++++++++++++++++++++++财富显示+++++++++++++++++++++++++++++++++++++ -->        
+         <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="云计算，刷红包！日赚千元不是梦！"
+            android:textColor="#ffff00"
+            android:textSize="20sp" />
+         <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="当前财富"
+            android:textColor="#ffff00"
+            android:textSize="16sp" />
+         <TextView
+            android:id="@+id/tvMoney"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="0元"
+            android:textColor="#ffff00"
+            android:textSize="128sp" />
+ 		<!-- +++++++++++++++++++++++++++++++++++++++++按钮功能++++++++++++++++++++++++++++++++++++ -->
+   		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btOpenServer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/float_button_get"
+                android:text="开启刷红包服务" />
+            <Button
+                android:id="@+id/btRun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/float_button_get"
+                android:text="开始" />
+  			<Button
+                android:id="@+id/btClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/float_button_get"
+                android:text="关闭" />
+        </LinearLayout>
+        <!-- +++++++++++++++++++++++++++++++++++++++++提现方式++++++++++++++++++++++++++++++++++++ -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="请选择提现方式"
+            android:textColor="#ffff00"
+            android:textSize="20sp" />
+        <!-- +++++++++++++++++++++++++++++++++++++++++提现方式>微信（注意：微信支付密码正确才能提现成功！）++++++++++++++++++++++++++++++++++++ -->
+        <CheckBox
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="提现到微信帐号"
+        	android:clickable="false"
+			android:focusable="false"
+			android:focusableInTouchMode="false"
+        	android:checked="true"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入微信帐号："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+          	 <EditText
+            	android:id="@+id/etWechatAccount"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:maxLength="24" />
+        </LinearLayout>
+   		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入微信支付密码："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+           <EditText
+            	android:id="@+id/etWechatPayPWD"
+            	android:layout_width="match_parent"
+           	 	android:layout_height="wrap_content"
+            	android:ems="10"
+            	android:inputType="number"
+            	android:maxLength="6" />
+        </LinearLayout>       
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+        <!-- +++++++++++++++++++++++++++++++++++++++++提现方式>QQ（注意：QQ支付密码正确才能提现成功！）++++++++++++++++++++++++++++++++++++ -->
+        <CheckBox
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="提现到QQ帐号"
+        	android:checked="true"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入QQ帐号："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+          	 <EditText
+            	android:id="@+id/etQQAccount"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:maxLength="24" />
+        </LinearLayout>
+   		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入QQ支付密码："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+           <EditText
+            	android:id="@+id/etQQPayPWD"
+            	android:layout_width="match_parent"
+           	 	android:layout_height="wrap_content"
+            	android:ems="10"
+            	android:inputType="number"
+            	android:maxLength="6" />
+        </LinearLayout>       
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+        <!-- +++++++++++++++++++++++++++++++++++++++++提现方式>支付宝（注意：支付密码正确才能提现成功！）++++++++++++++++++++++++++++++++++++ -->
+        <CheckBox
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="提现到支付宝"
+        	android:checked="true"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入支付宝帐号："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+          	 <EditText
+            	android:id="@+id/etZFBAccount"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:maxLength="24" />
+        </LinearLayout>
+   		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+             android:visibility="gone"
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入支付宝支付密码："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+           <EditText
+            	android:id="@+id/etZFBPayPWD"
+            	android:layout_width="match_parent"
+           	 	android:layout_height="wrap_content"
+            	android:ems="10"
+            	android:inputType="number"
+            	android:maxLength="6" />
+        </LinearLayout>       
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+   		<!-- +++++++++++++++++++++++++++++++++++++++++提现方式>手机话费++++++++++++++++++++++++++++++++++++ -->
+        <CheckBox
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="充值到手机话费"
+        	android:checked="true"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入手机号："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+          	 <EditText
+            	android:id="@+id/etPhoneNumber"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:maxLength="12" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+      	<!-- +++++++++++++++++++++++++++++++++++++++++提现方式>银行卡++++++++++++++++++++++++++++++++++++ -->
+        <CheckBox
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="转入银行卡"
+        	android:checked="true"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+          	<TextView
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="请输入银行卡号："
+            	android:textColor="#000000"
+            	android:textSize="16sp" />
+          	 <EditText
+            	android:id="@+id/etBankNumber"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:maxLength="12" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+		<Button
+			android:id="@+id/btCash"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/float_button_get"
+            android:text="提现" />
+		 <TextView
+		    android:id="@+id/tvCash"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="当前没有正在提现的金额！"
+            android:textColor="#ffff00"
+            android:textSize="20sp" />
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+     	<!-- +++++++++++++++++++++++++++++++++++++++++语音模块++++++++++++++++++++++++++++++++++++ -->
+         <TextView
+            android:id="@+id/tvSelSoundMode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="请选择发音模式："
+            android:textColor="#ff0000"
+            android:textSize="20sp" />
+  			<com.example.h3.FlowRadioGroup
+                android:id="@+id/rgSelSoundMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal" >
+                <RadioButton
+                    android:id="@+id/rbFemaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="女声" />
+                <RadioButton
+                    android:id="@+id/rbMaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男声" />
+                <RadioButton
+                    android:id="@+id/rbSpecialMaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特别男声" />
+                <RadioButton
+                    android:id="@+id/rbMotionMaleSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="情感男声" />
+                 <RadioButton
+                    android:id="@+id/rbChildrenSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="情感儿童声" />
+                <RadioButton
+                    android:id="@+id/rbCloseSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关闭语音提示" />
+           </com.example.h3.FlowRadioGroup> 
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" /> 
+        <!-- +++++++++++++++++++++++++++++++++++++++++功能说明使用说明++++++++++++++++++++++++++++++++++++ -->       
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="●主要功能：\n●连接腾讯红包服务器，通过云计算，刷取红包；\n●刷到的金额满1000元即可提现至微信账号、QQ账号、支付宝、银行卡、手机话费；"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+		<TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="●使用说明：\n●请先打开刷红包服务；\n●然后点开始按钮；\n●软件会自动通过云计算刷红包，抢到的红包自动存入个人帐户；\n●需要暂停刷红包时，请点击暂停按钮；\n●请于每天晚上零点后开启刷红包，这时网络不拥堵，能抢到更多红包；"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="5dp"
+            android:layout_weight="0.21"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/tiao" />
+           
+ 		<!-- ++++++++++++++++++++++++++++++++++++++++授权模块+++++++++++++++++++++++++++++++++++++ -->
+        <TextView
+            android:id="@+id/tvRegState"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="授权状态：未授权"
+            android:textColor="#ffff00"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvRegWarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="警告：请于每天晚上零点后刷红包，网络不拥堵，能抢到更多红包！技术及授权联系QQ：1541464569微信byc6354。"
+            android:textColor="#ffff00"
+            android:textSize="16sp" />
+       <TextView
+            android:id="@+id/tvHomePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:text="官方下载地址：\nhttp://119.23.68.205/android/index.htm"
+            android:textColor="#0000ff"
+            android:textSize="16sp" />
+       <TextView
+            android:id="@+id/tvRemark1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="使用说明：部分机型不显示【刷红包】悬浮窗口，请到手机设置里面设置允许软件显示悬浮窗口。"
+            android:textColor="#ffff00"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tvPlease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="14dp"
+            android:text="请输入授权码："
+            android:textColor="#ff0000"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etRegCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="12" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/btReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/float_button_get"
+            android:text="确定" />
+    </LinearLayout>
+
+</ScrollView>
